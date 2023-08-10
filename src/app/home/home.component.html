@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!--Nav Bar-->
+
+    <mat-toolbar color="primary" style="background-color: rgba(46, 60, 84, 255)">
+
+        <mat-toolbar-row style="min-height: 40px; height: 40px">
+
+            <img src="../../assets/images/logo.png" style="height: 20px; width: 150px" alt="cozentus-logo" />
+
+            <span class="example-spacer"></span>
+
+            <div class="logo ml-auto justify-content-spacearound" style="display: flex">
+
+                <div class="circle">
+
+                    <span class="dot mr-2" style="color: white; margin-top: 10px; text-align: center">SD</span>
+
+                </div>
+
+                <div class="name">
+
+                    <h4 style="
+  
+                color: white;
+  
+                font-weight: 100;
+  
+                margin-top: 13px;
+  
+                margin-left: 2px;
+  
+              " class="mr-2">
+
+                        SS Dash
+
+                    </h4>
+
+                </div>
+
+                <div class="downlogo">
+
+                    <img src="../../assets/images/down.png" style="
+  
+                height: 10px;
+  
+                width: 12px;
+  
+                filter: brightness(0) invert(1);
+  
+                margin-left: 3px;
+  
+                margin-top: 15px;
+  
+              " alt="down-logo" />
+
+                </div>
+
+            </div>
+
+        </mat-toolbar-row>
+
+
+
+        <mat-toolbar-row style="min-height: 40px; height: 40px">
+
+            <button mat-stroked-button style="background-color: transparent; color: white; border: none">
+               
+                    
+
+                <!-- <img src="../../assets/images/google-docs.png" class="img mx-2" alt="home" />Courses<img
+                    src="../../assets/images/drop.png"
+                    style="height: 10px; width: 10px; filter: brightness(0) invert(1);" class="mx-2"> -->
+                    <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
+                        
+                        <img src="../../assets/images/google-docs.png" class="img" alt="home" style="height: 20px; width: 20px; filter: brightness(0) invert(1);" />
+                         Courses
+                      </a>
+                     
+                      <div class="dropdown-menu my-0" style="background-color: rgb(15, 15, 38);">
+                        <button mat-stroked-button style="background-color: transparent; color: white; border: none">
+                        
+                <img src="../../assets/images/google-docs.png" class="img" alt="home"   style="height: 20px; width: 20px; filter: brightness(0) invert(1);" />Courses
+                 
+                        </button>
+                        <!-- <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Something else here</a> -->
+                      </div>
+
+            </button>
+
+            <button mat-stroked-button style="background-color: transparent; color: white; border: none">
+
+                <img src="../../assets/images/group.png" class="img mx-2" alt="batch" />Batch
+
+            </button>
+
+            <button mat-stroked-button style="background-color: transparent; color: white; border: none">
+
+                <img src="../../assets/images/teacher.png" class="img mx-2" alt="assignment" />Teachers
+
+            </button>
+
+            <button mat-stroked-button style="background-color: transparent; color: white; border: none">
+
+                <img src="../../assets/images/student.png" class="img mx-2" alt="reports" />Students
+
+            </button>
+
+        </mat-toolbar-row>
+
+    </mat-toolbar>
+
+
+
+    <!--Content-->
+
+    <div class="content">
+
+        <div class="row">
+
+            <div class="col-3">
+
+                <h4 style="margin-left: 20px; margin-top: 15px">Home > PHP Basics</h4>
+
+            </div>
+
+            <div class="col-6"></div>
+
+            <div class="col-3">
+
+                <button style="margin-left: 300px; background-color: white; " matTooltip="Refresh" mat-icon-button><mat-icon>refresh</mat-icon>
+
+                </button>
+
+            </div>
+
+        </div>
+
+        <div class="container" style="
+  
+          background-color: rgba(255, 255, 255, 255);
+  
+          width: 100%;
+  
+          height: 500px;">
+
+            <div class="row">
+
+                <div class="col-3" style="margin-top: 15px;">
+
+                    <form class="d-flex">
+
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+
+                    </form>
+
+                </div>
+
+                <div class="col-7"></div>
+
+                <div class="col-2" style="margin-top: 15px;">
+
+                    <button mat-stroked-button style="
+  
+              background-color: transparent;
+  
+              color: rgb(0, 0, 0);
+  
+              border-color: black;
+  
+            " (click)="onAddTopic()" >
+
+                        Add Topic
+
+                    </button>
+
+                </div>
+
+            </div><br>
+
+            <div class="container">
+
+                <div class="row" style="background-color:#e9f1f8 ;">
+
+                    <div class="col-4" style="margin-top: 15px;">
+
+                        <h4 style="font-weight: bolder;">Please add a course to see content</h4>
+
+                    </div>
+
+                    <div class="col-9" style="margin-top: 15px;">
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- <div class="container">
+  
+        <div class="row" style="margin-top: 30px;">
+  
+          <div class="col-7"></div>
+  
+          <div class="col-5">
+  
+            <mat-paginator [length]="1393"
+  
+                [pageSize]="10"
+  
+                [pageSizeOptions]="[5, 10, 25, 100]"
+  
+                aria-label="Select page">
+  
+            </mat-paginator>
+  
+          </div>
+  
+        </div>
+  
+      </div>
+   -->
+    
+
+       <ng-container #container1></ng-container>
+
+    </div>
+
+</div>
+
+ 
+
+
+</body>
+
+</html>
