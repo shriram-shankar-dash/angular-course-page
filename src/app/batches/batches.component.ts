@@ -10,6 +10,7 @@ export class BatchesComponent {
   @ViewChild('container3',{read:ViewContainerRef,static:true})
   container3!:ViewContainerRef
   onAddBatch(){
+    this.container3.clear()
   this.container3.createComponent(BatchtableComponent)
   }
 }

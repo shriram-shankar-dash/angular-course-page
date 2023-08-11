@@ -35,6 +35,7 @@ import {MatDividerModule} from '@angular/material/divider';
 import { InputComponent } from './input/input.component';
 import { BatchesComponent } from './batches/batches.component';
 import { BatchtableComponent } from './batchtable/batchtable.component';
+import { Batchtable1Component } from './batchtable1/batchtable1.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { BatchtableComponent } from './batchtable/batchtable.component';
     HomeComponent,
     InputComponent,
     BatchesComponent,
-    BatchtableComponent
+    BatchtableComponent,
+    Batchtable1Component
   ],
   imports: [
     BrowserModule,
