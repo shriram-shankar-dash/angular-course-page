@@ -47,3 +47,7 @@
     max-height: 30%;
     overflow: auto;
   }
+  td button img{
+    height: 15px;
+    width: 15px;
+  }

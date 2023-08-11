@@ -8,7 +8,7 @@
   
         <th mat-header-cell *matHeaderCellDef> Actions </th>
   
-        <td mat-cell *matCellDef="let element"> <button (click)="onLocalstorage()" ><img src="../../assets/images/check.png" style="width: 15px; height: 15px;" alt=""></button> <button><img src="../../assets/images/close (1).png"  style="width: 15px; height: 15px;" alt=""></button> {{ element.Actions }} </td>
+        <td mat-cell *matCellDef="let element"> <button (click)="onLocalstorage()" style="border: none;" ><img src="../../assets/images/check.png" style="width: 15px; height: 15px;" alt=""></button> <button style="border: none;" ><img src="../../assets/images/close (1).png"  style="width: 15px; height: 15px;" alt=""></button> {{ element.Actions }} </td>
   
       </ng-container>
   
@@ -18,7 +18,7 @@
   
         <th mat-header-cell *matHeaderCellDef> Code </th>
   
-        <td mat-cell *matCellDef="let element"> <input type="text" name="" id="" style="width: 120px;" placeholder="enter code" [(ngModel)]="code" > {{element.Code}} </td>
+        <td mat-cell *matCellDef="let element"> <input type="text" name="" id="" style="width: 120px;" placeholder="enter code" [(ngModel)]="code" [disabled]="isDisabled" > {{element.Code}} </td>
   
       </ng-container>
   
@@ -28,7 +28,7 @@
   
         <th mat-header-cell *matHeaderCellDef> Course Name </th>
   
-        <td mat-cell *matCellDef="let element"> <input type="text" name="course" id="" style="width: 120px;" placeholder="enter course name" [(ngModel)]="course" > {{element.CourseName}} </td>
+        <td mat-cell *matCellDef="let element"> <input type="text" name="course" id="" style="width: 120px;" placeholder="enter course name" [(ngModel)]="course" [disabled]="isDisabled" > {{element.CourseName}} </td>
   
       </ng-container>
   
@@ -38,7 +38,7 @@
   
         <th mat-header-cell *matHeaderCellDef> Theory Time </th>
   
-        <td mat-cell *matCellDef="let element"> <input type="text" name="" id="" style="width: 120px;" placeholder="0 hours" [(ngModel)]="Theorytime" > {{element.TheoryTime}} </td>
+        <td mat-cell *matCellDef="let element"> <input type="text" name="" id="" style="width: 120px;" placeholder="0 hours" [(ngModel)]="Theorytime" [disabled]="isDisabled" > {{element.TheoryTime}} </td>
   
       </ng-container>
   
@@ -48,7 +48,7 @@
   
         <th mat-header-cell *matHeaderCellDef> Practise Time </th>
   
-        <td mat-cell *matCellDef="let element"> <input type="text" name="practisetime" id="practisetime" style="width: 120px;" placeholder="0 hours" [(ngModel)]="practisetime" > {{element.PractiseTime}} </td>
+        <td mat-cell *matCellDef="let element"> <input type="text" name="practisetime" id="practisetime" style="width: 120px;" placeholder="0 hours" [(ngModel)]="practisetime" [disabled]="isDisabled" > {{element.PractiseTime}} </td>
   
       </ng-container>
   
@@ -58,7 +58,7 @@
   
         <th mat-header-cell *matHeaderCellDef> Description </th>
   
-        <td mat-cell *matCellDef="let element"> <button  data-target="#modalCart" data-toggle="modal">Add descriptiions</button>{{element.Description}} </td>
+        <td mat-cell *matCellDef="let element"> <button  data-target="#modalCart" data-toggle="modal" [disabled]="isDisabled">Add descriptiions</button>{{element.Description}} </td>
   
       </ng-container>
   
@@ -68,7 +68,7 @@
   
         <th mat-header-cell *matHeaderCellDef> Topics </th>
   
-        <td mat-cell *matCellDef="let element"><button data-target="#modalCart1" data-toggle="modal">Add Topics</button>{{element.Topics}} </td>
+        <td mat-cell *matCellDef="let element"><button data-target="#modalCart1" data-toggle="modal"  [disabled]="isDisabled" >Add Topics</button>{{element.Topics}} </td>
   
       </ng-container>
   
@@ -173,19 +173,22 @@
 
 
 <!-- local storage end  -->
-<table>
+<table class="table table-striped table-hover">
   <thead>
     <tr>
-      <th>Course</th>
-      <th>Theory</th>
-      <th>practical</th>
-      <th>Course</th>
-      <th>Theory</th>
-      <th>practical</th>
+      <th>Actions</th>
+      <th>Code</th>
+      <th>Course Name</th>
+      <th>Theory Time</th>
+      <th>Practice Time</th>
+      <th>Description</th>
+      <th>Topics</th>
+      
     </tr>
   </thead>
   <tbody>
     <tr *ngFor="let entry of entries">
+      <td><button (click)="editRow(entry)" style="border: none;" ><img src="../../assets/images/pencil (2).png" alt=""></button> <button (click)="deleteRow(entry)" style="border: none;" ><img src="../../assets/images/bin.png" alt=""></button> </td>
       <td>{{ entry.code }}</td>
       <td>{{ entry.course }}</td>
       <td>{{ entry.Theorytime }}</td>

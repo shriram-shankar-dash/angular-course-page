@@ -100,7 +100,7 @@
 
             </button>
 
-            <button mat-stroked-button style="background-color: transparent; color: white; border: none">
+            <button mat-stroked-button style="background-color: transparent; color: white; border: none" (click)="batch()">
 
                 <img src="../../assets/images/group.png" class="img mx-2" alt="batch" />Batch
 
@@ -125,8 +125,9 @@
 
 
     <!--Content-->
+    <ng-container #container2></ng-container>
 
-    <div class="content">
+    <div class="content" *ngIf="content" >
 
         <div class="row">
 

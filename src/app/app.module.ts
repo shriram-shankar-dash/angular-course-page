@@ -33,13 +33,17 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 
 import {MatDividerModule} from '@angular/material/divider';
 import { InputComponent } from './input/input.component';
+import { BatchesComponent } from './batches/batches.component';
+import { BatchtableComponent } from './batchtable/batchtable.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     WelcomeComponent,
     HomeComponent,
-    InputComponent
+    InputComponent,
+    BatchesComponent,
+    BatchtableComponent
   ],
   imports: [
     BrowserModule,
