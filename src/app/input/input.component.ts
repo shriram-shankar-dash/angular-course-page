@@ -1,3 +1,4 @@
+import { JsonPipe } from '@angular/common';
 import { Component } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 export interface PeriodicElement {
@@ -23,9 +24,15 @@ export interface PeriodicElement {
   styleUrls: ['./input.component.css']
 })
 export class InputComponent {
+  constructor(){
+    const storedEntries = localStorage.getItem('entries');
+      if (storedEntries) {
+        this.entries = JSON.parse(storedEntries);
+      }
+    }
 
   entries: any[] = [];
-
+  
 
   code:string ='';
   course:string ='';
@@ -58,9 +65,9 @@ export class InputComponent {
   dataSource = new MatTableDataSource(this.ELEMENT_DATA);
 
 
-
-
   onLocalstorage(){
+    
+    
 
      this.obj.code=this.code;
      this.obj.course=this.course;
@@ -68,24 +75,30 @@ export class InputComponent {
      this.obj.practisetime=this.practisetime;
      this.obj.descriptions=this.descriptions;
      this.obj.topics=this.topics
-   
-      sessionStorage.setItem("obj", JSON.stringify(this.obj));
-      console.log(this.obj);  
-      this.entries.push(this.obj)
-      console.log(this.entries)
      
-     
-      
+    sessionStorage.setItem("obj", JSON.stringify(this.obj));
+  
+    const personCopy = { ...this.obj};
+    this.entries.push(personCopy)
 
+
+    
+
+
+
+
+
+      // console.log(this.obj);    
+      console.log(this.entries)
   }
 
   
 
-constructor(){
-  const storedEntries = localStorage.getItem('entries');
-    if (storedEntries) {
-      this.entries = JSON.parse(storedEntries);
-    }
-  }
+// constructor(){
+//   const storedEntries = localStorage.getItem('entries');
+//     if (storedEntries) {
+//       this.entries = JSON.parse(storedEntries);
+//     }
+//   }
 
 }
