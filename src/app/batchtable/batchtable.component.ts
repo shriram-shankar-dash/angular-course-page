@@ -12,12 +12,26 @@ export interface PeriodicElement {
   BatchStart: string;
 
 }
+
 @Component({
   selector: 'app-batchtable',
   templateUrl: './batchtable.component.html',
   styleUrls: ['./batchtable.component.css']
 })
 export class BatchtableComponent {
+  batchcode=''
+  batchname='';
+  selectedDate=''
+  var1=true;
+  var2=true;
+  var3=true;
+
+
+  var4 = false;
+  var5= false;
+  var6= false;
+
+
   @ViewChild('container4',{read:ViewContainerRef,static:true})
   container4!:ViewContainerRef
   ELEMENT_DATA: PeriodicElement[] = [
@@ -33,7 +47,23 @@ export class BatchtableComponent {
   dataSource = new MatTableDataSource(this.ELEMENT_DATA);
  secondtable(){
   this.container4.clear()
+  this.var1=false
+  this.var2=false;
+  this.var3=false;
+  this.var4=true;
+  this.var5=true;
+  this.var6=true;
+
+
 this.container4.createComponent(Batchtable1Component)
  }
+
+
+  onDateChange(event: any): void {
+    
+    
+
+  this.selectedDate = event.value;
+  }
 
 }
